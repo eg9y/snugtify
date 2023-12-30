@@ -10,7 +10,7 @@ import {
   Search,
   Send,
   ShoppingCart,
-  Trash2,
+  LucideSearch,
   Users2,
 } from "lucide-react"
 import "./App.css";
@@ -94,39 +94,33 @@ function App({
             isCollapsed={isCollapsed}
             links={[
               {
-                title: "Inbox",
+                title: "Recents",
                 label: "128",
                 icon: Inbox,
                 variant: "default",
               },
               {
-                title: "Drafts",
+                title: "Search",
+                label: "23",
+                icon: LucideSearch,
+                variant: "ghost",
+              },
+              {
+                title: "Tracks",
                 label: "9",
                 icon: File,
                 variant: "ghost",
               },
               {
-                title: "Sent",
+                title: "Podcasts",
                 label: "",
                 icon: Send,
                 variant: "ghost",
               },
               {
-                title: "Junk",
+                title: "Playlists",
                 label: "23",
                 icon: ArchiveX,
-                variant: "ghost",
-              },
-              {
-                title: "Trash",
-                label: "",
-                icon: Trash2,
-                variant: "ghost",
-              },
-              {
-                title: "Archive",
-                label: "",
-                icon: Archive,
                 variant: "ghost",
               },
             ]}
@@ -136,35 +130,11 @@ function App({
             isCollapsed={isCollapsed}
             links={[
               {
-                title: "Social",
+                title: "Settings",
                 label: "972",
                 icon: Users2,
                 variant: "ghost",
-              },
-              {
-                title: "Updates",
-                label: "342",
-                icon: AlertCircle,
-                variant: "ghost",
-              },
-              {
-                title: "Forums",
-                label: "128",
-                icon: MessagesSquare,
-                variant: "ghost",
-              },
-              {
-                title: "Shopping",
-                label: "8",
-                icon: ShoppingCart,
-                variant: "ghost",
-              },
-              {
-                title: "Promotions",
-                label: "21",
-                icon: Archive,
-                variant: "ghost",
-              },
+              }
             ]}
           />
         </ResizablePanel>
@@ -172,7 +142,7 @@ function App({
         <ResizablePanel defaultSize={defaultLayout[1]} minSize={30}>
           <Tabs defaultValue="all">
             <div className="flex items-center px-4 py-2">
-              <h1 className="text-xl font-bold">Inbox</h1>
+              <h1 className="text-xl font-bold">Snugtify</h1>
               <TabsList className="ml-auto">
                 <TabsTrigger value="all" className="text-zinc-600 dark:text-zinc-200">All mail</TabsTrigger>
                 <TabsTrigger value="unread" className="text-zinc-600 dark:text-zinc-200">Unread</TabsTrigger>
