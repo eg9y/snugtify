@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { invoke } from '@tauri-apps/api'
 import { Store } from "tauri-plugin-store-api";
 import {
   AlertCircle,
@@ -29,6 +30,12 @@ interface MailProps {
 }
 
 const store = new Store(".settings.dat");
+
+async function loginSpotify() {
+  // invoke tauri login spotify command
+  const playConnect = await invoke('play_connect', { username: "eganbisma", password: "Lifebeforedeath19!" });
+  console.log('greet', playConnect);
+}
 
 
 function App({
@@ -158,7 +165,9 @@ function App({
               </form>
             </div>
             <TabsContent value="all" className="m-0">
-             stuff
+              <Button onClick={loginSpotify}>
+               stuff
+              </Button>
             </TabsContent>
             <TabsContent value="unread" className="m-0">
              stuff
